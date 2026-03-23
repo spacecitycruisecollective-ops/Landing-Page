@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Space City Cruise Collective | Texas Contract Routes & Courier Services</title>
-  <meta name="description" content="Texas statewide (24/7) contract routes, medical courier & specimen transport, on-demand rush courier, and pilot/escort vehicle support. SOP-driven operations built for reliability and scale." />
+  <meta name="description" content="Texas statewide contract routes, medical courier & specimen transport, on-demand rush courier, and pilot/escort vehicle support. SOP-driven operations built for reliability and scale." />
 
   <style>
     /* ====== FONT + THEME ====== */
@@ -244,4 +244,616 @@
       border-radius:16px;
       padding:18px;
       min-height:220px;
-      display
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+      z-index:1;
+    }
+    .media-box h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:20px;
+      margin:0 0 8px;
+    }
+    .media-box p{
+      color:rgba(255,255,255,0.7);
+      font-size:14px;
+      margin:0 0 14px;
+    }
+    .stat-row{
+      display:flex;
+      gap:14px;
+      margin-top:14px;
+      position:relative;
+      z-index:1;
+    }
+    .stat{
+      flex:1;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:14px;
+      padding:12px;
+      text-align:center;
+    }
+    .stat strong{
+      display:block;
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:22px;
+      color:var(--amber);
+    }
+    .stat span{
+      font-size:12px;
+      color:rgba(255,255,255,0.6);
+    }
+
+    /* ====== SECTION ====== */
+    .section{
+      padding:48px 0;
+    }
+    .section-header{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    .section-header h2{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:32px;
+      margin:0 0 8px;
+    }
+    .section-header p{
+      color:var(--muted);
+      font-size:16px;
+      margin:0;
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    /* ====== SERVICE CARDS ====== */
+    .services-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+    }
+    .service-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover{
+      transform:translateY(-3px);
+      box-shadow: 0 16px 40px rgba(2,6,23,0.14);
+    }
+    .service-icon{
+      width:48px; height:48px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      margin-bottom:14px;
+    }
+    .service-card h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:17px;
+      margin:0 0 8px;
+    }
+    .service-card p{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 12px;
+      line-height:1.5;
+    }
+    .service-tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      background:rgba(14,124,134,0.10);
+      color:var(--teal);
+    }
+
+    /* ====== WHY US ====== */
+    .why-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+    }
+    .why-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      text-align:center;
+    }
+    .why-card .icon{
+      width:52px; height:52px;
+      border-radius:14px;
+      margin:0 auto 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      background:rgba(14,124,134,0.08);
+    }
+    .why-card h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:16px;
+      margin:0 0 6px;
+    }
+    .why-card p{
+      color:var(--muted);
+      font-size:13px;
+      margin:0;
+      line-height:1.5;
+    }
+
+    /* ====== COVERAGE BANNER ====== */
+    .coverage{
+      background: linear-gradient(135deg, var(--navy), #0D2847);
+      border-radius:var(--radius);
+      padding:36px 32px;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+      box-shadow: var(--shadow);
+    }
+    .coverage h2{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:26px;
+      margin:0 0 6px;
+    }
+    .coverage p{
+      color:rgba(255,255,255,0.7);
+      margin:0;
+      font-size:15px;
+      max-width:540px;
+    }
+    .coverage .btn-primary{
+      flex-shrink:0;
+    }
+
+    /* ====== CONTACT ====== */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    @media (max-width: 700px){
+      .contact-grid{grid-template-columns:1fr}
+    }
+    .contact-info{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .contact-info h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:20px;
+      margin:0 0 16px;
+    }
+    .contact-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:16px;
+    }
+    .contact-item .ci-icon{
+      width:40px; height:40px;
+      border-radius:12px;
+      background:rgba(14,124,134,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      flex-shrink:0;
+    }
+    .contact-item strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:2px;
+    }
+    .contact-item span{
+      color:var(--muted);
+      font-size:13px;
+    }
+    .contact-form{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .contact-form h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:20px;
+      margin:0 0 16px;
+    }
+    .form-group{
+      margin-bottom:14px;
+    }
+    .form-group label{
+      display:block;
+      font-weight:600;
+      font-size:13px;
+      margin-bottom:5px;
+      color:var(--text);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;
+      padding:10px 14px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      font-family:inherit;
+      font-size:14px;
+      background:var(--bg);
+      color:var(--text);
+      outline:none;
+      transition:border-color 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:var(--teal);
+    }
+    .form-group textarea{
+      resize:vertical;
+      min-height:80px;
+    }
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 500px){
+      .form-row{grid-template-columns:1fr}
+    }
+
+    /* ====== FOOTER ====== */
+    footer{
+      background: linear-gradient(180deg, var(--navy), #07152A);
+      color:#fff;
+      padding:36px 0 20px;
+      margin-top:48px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap:32px;
+      margin-bottom:28px;
+    }
+    @media (max-width: 700px){
+      .footer-grid{grid-template-columns:1fr}
+    }
+    .footer-brand h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:18px;
+      margin:0 0 8px;
+    }
+    .footer-brand p{
+      color:rgba(255,255,255,0.6);
+      font-size:13px;
+      margin:0 0 14px;
+      line-height:1.6;
+    }
+    .footer-col h4{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:14px;
+      margin:0 0 12px;
+      color:var(--amber);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .footer-col a{
+      display:block;
+      color:rgba(255,255,255,0.6);
+      font-size:13px;
+      margin-bottom:8px;
+      transition:color 0.15s ease;
+    }
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+      color:rgba(255,255,255,0.45);
+      font-size:12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== TOP BAR ====== -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="chip">&#9742; Houston, TX &mdash; Statewide Operations 24/7</div>
+      <div class="top-actions">
+        <a href="tel:+18325551234">&#9742; (832) 555-1234</a>
+        <a href="mailto:dispatch@spacecitycruise.com">&#9993; dispatch@spacecitycruise.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="brand">
+          <div class="logo"></div>
+          <div>
+            <h1>Space City Cruise Collective</h1>
+            <small>Texas Contract Routes &amp; Courier</small>
+          </div>
+        </a>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#coverage">Coverage</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="cta">
+          <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-wrap">
+        <div class="hero-card">
+          <div class="kicker">&#9733; SOP-Driven &bull; Fully Insured &bull; Texas Statewide</div>
+          <h2>Contract Routes &amp; Courier Services Built for Reliability</h2>
+          <p>From medical specimen transport to on-demand rush delivery, Space City Cruise Collective delivers SOP-driven logistics across Texas &mdash; on time, every time.</p>
+          <div class="row">
+            <a href="#contact" class="btn btn-primary">Request a Route Quote</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+          <div class="trust">
+            <div>&#10003; HIPAA-Compliant Transport</div>
+            <div>&#10003; 24/7 Dispatch Available</div>
+            <div>&#10003; Dedicated Route Drivers</div>
+            <div>&#10003; Real-Time GPS Tracking</div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="media-box">
+            <h3>Texas-Wide Coverage</h3>
+            <p>Houston &bull; Dallas &bull; San Antonio &bull; Austin &bull; El Paso &amp; Beyond</p>
+            <a href="#contact" class="btn btn-primary">Start Today</a>
+          </div>
+          <div class="stat-row">
+            <div class="stat">
+              <strong>500+</strong>
+              <span>Routes / Month</span>
+            </div>
+            <div class="stat">
+              <strong>99.7%</strong>
+              <span>On-Time Rate</span>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <span>Dispatch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>SOP-driven logistics solutions tailored for Texas businesses that demand reliability, compliance, and scale.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(14,124,134,0.10)">&#128666;</div>
+          <h3>Contract Route Services</h3>
+          <p>Dedicated daily and weekly contract routes across Texas. Reliable, scheduled logistics with assigned drivers who know your requirements inside and out.</p>
+          <span class="service-tag">Statewide</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(245,158,11,0.10)">&#127973;</div>
+          <h3>Medical Courier &amp; Specimen Transport</h3>
+          <p>HIPAA-compliant transport for lab specimens, medical records, pharmaceuticals, and sensitive healthcare materials with chain-of-custody protocols.</p>
+          <span class="service-tag">HIPAA Compliant</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(239,68,68,0.10)">&#9889;</div>
+          <h3>On-Demand Rush Courier</h3>
+          <p>Same-day and rush delivery for time-critical shipments. Direct dispatch with real-time tracking and proof of delivery for every run.</p>
+          <span class="service-tag">Same-Day</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(99,102,241,0.10)">&#128679;</div>
+          <h3>Pilot &amp; Escort Vehicle Support</h3>
+          <p>Certified pilot car and escort vehicle services for oversize and overweight loads. Compliance with TxDOT regulations on every haul.</p>
+          <span class="service-tag">TxDOT Certified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHY US ====== -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Space City Cruise Collective</h2>
+        <p>Operations built on standard operating procedures, accountability, and Texas-scale infrastructure.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="icon">&#128203;</div>
+          <h3>SOP-Driven Operations</h3>
+          <p>Every route and delivery follows documented standard operating procedures for consistency and quality assurance.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">&#128225;</div>
+          <h3>Real-Time Communication</h3>
+          <p>Live GPS tracking, instant status updates, and direct access to dispatch for full visibility on every shipment.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">&#128274;</div>
+          <h3>Fully Insured &amp; Compliant</h3>
+          <p>Comprehensive insurance coverage, HIPAA compliance for medical transport, and TxDOT certification for escort services.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">&#128337;</div>
+          <h3>24/7 Availability</h3>
+          <p>Round-the-clock dispatch and driver availability. Weekends, holidays, and after-hours &mdash; we run when you need us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COVERAGE BANNER ====== -->
+  <section class="section" id="coverage">
+    <div class="container">
+      <div class="coverage">
+        <div>
+          <h2>Statewide Texas Coverage</h2>
+          <p>Headquartered in Houston with route networks spanning Dallas&ndash;Fort Worth, San Antonio, Austin, El Paso, Lubbock, Corpus Christi, and every corridor in between.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary">Request Coverage Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>Ready to set up a contract route or need a rush courier? Reach out and the team will respond within the hour.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="ci-icon">&#9742;</div>
+            <div>
+              <strong>Phone</strong>
+              <span>(832) 555-1234</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">&#9993;</div>
+            <div>
+              <strong>Email</strong>
+              <span>dispatch@spacecitycruise.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">&#128205;</div>
+            <div>
+              <strong>Headquarters</strong>
+              <span>Houston, TX</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">&#128337;</div>
+            <div>
+              <strong>Dispatch Hours</strong>
+              <span>24/7 &mdash; 365 Days</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Request a Quote</h3>
+          <form name="quote" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="quote" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service...</option>
+                <option value="contract-routes">Contract Route Services</option>
+                <option value="medical-courier">Medical Courier &amp; Specimen Transport</option>
+                <option value="rush-courier">On-Demand Rush Courier</option>
+                <option value="pilot-escort">Pilot &amp; Escort Vehicle Support</option>
+                <option value="other">Other / Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Details</label>
+              <textarea id="message" name="message" placeholder="Tell us about your route needs, frequency, locations, and any special requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%">Submit Quote Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Space City Cruise Collective</h3>
+          <p>Texas-based contract route and courier operations built on SOPs, reliability, and statewide reach. Serving healthcare, logistics, and industrial clients across all major Texas corridors.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Contract Routes</a>
+          <a href="#services">Medical Courier</a>
+          <a href="#services">Rush Courier</a>
+          <a href="#services">Pilot &amp; Escort</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#why-us">Why Us</a>
+          <a href="#coverage">Coverage Area</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact">Get a Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Space City Cruise Collective. All rights reserved.</span>
+        <span>Houston, TX &mdash; Statewide Operations</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
