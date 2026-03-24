@@ -574,6 +574,79 @@
       color:rgba(255,255,255,0.45);
       font-size:12px;
     }
+
+    /* ====== MODAL ====== */
+    .modal-overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:100;
+      background:rgba(11,31,59,0.55);
+      backdrop-filter:blur(4px);
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .modal-overlay.active{display:flex}
+    .modal{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      max-width:520px;
+      width:100%;
+      max-height:90vh;
+      overflow-y:auto;
+      position:relative;
+    }
+    .modal h3{
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:20px;
+      margin:0 0 6px;
+    }
+    .modal .modal-sub{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 18px;
+    }
+    .modal-close{
+      position:absolute;
+      top:16px;
+      right:16px;
+      width:32px;height:32px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:var(--bg);
+      font-size:18px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      transition:background 0.15s ease;
+    }
+    .modal-close:hover{background:var(--border)}
+    .modal-success{
+      text-align:center;
+      padding:24px 0;
+    }
+    .modal-success .check-icon{
+      width:56px;height:56px;
+      border-radius:50%;
+      background:rgba(14,124,134,0.10);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin:0 auto 16px;
+    }
+    .modal-success h3{margin-bottom:8px}
+    .modal-success p{
+      color:var(--muted);
+      font-size:14px;
+      margin:0;
+    }
   </style>
 </head>
 <body>
@@ -735,7 +808,7 @@
           <h2>Fast Onboarding for Carriers &amp; Brokers</h2>
           <p>WITPAC certified &bull; Washington PEVO certified &bull; $1M+ insured &bull; COI available upon request &bull; Direct dispatch communication</p>
         </div>
-        <a href="#contact" class="btn btn-primary">Request Documents</a>
+        <a href="#" class="btn btn-primary" onclick="openDocModal(event)">Request Documents</a>
       </div>
     </div>
   </section>
@@ -858,6 +931,107 @@
       </div>
     </div>
   </footer>
+
+  <!-- ====== DOCUMENT REQUEST MODAL ====== -->
+  <div class="modal-overlay" id="docModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeDocModal()" aria-label="Close">&times;</button>
+      <div id="docFormContent">
+        <h3>Request Documents</h3>
+        <p class="modal-sub">Request onboarding documents such as COI, WITPAC certification, or other company documentation.</p>
+        <form id="docForm" name="documents" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="documents" />
+          <p style="display:none">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doc-name">Full Name</label>
+              <input type="text" id="doc-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="doc-company">Company</label>
+              <input type="text" id="doc-company" name="company" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doc-email">Email</label>
+              <input type="email" id="doc-email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="doc-phone">Phone</label>
+              <input type="tel" id="doc-phone" name="phone" placeholder="(555) 555-5555" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="doc-documents">Documents Needed</label>
+            <select id="doc-documents" name="documents" required>
+              <option value="">Select document type...</option>
+              <option value="coi">Certificate of Insurance (COI)</option>
+              <option value="witpac">WITPAC Certification</option>
+              <option value="wa-pevo">Washington State PEVO Certification</option>
+              <option value="multiple">Multiple Documents</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="doc-message">Additional Details</label>
+            <textarea id="doc-message" name="message" placeholder="Certificate holder details, specific documents needed, load or project reference..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Submit Document Request</button>
+        </form>
+      </div>
+      <div id="docFormSuccess" class="modal-success" style="display:none">
+        <div class="check-icon">&#10003;</div>
+        <h3>Document Request Received</h3>
+        <p>Thank you. Dispatch will review your request and send the appropriate documents as quickly as possible.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openDocModal(e) {
+      e.preventDefault();
+      document.getElementById('docModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDocModal() {
+      document.getElementById('docModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('docModal').addEventListener('click', function(e) {
+      if (e.target === this) closeDocModal();
+    });
+
+    document.getElementById('docForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(res) {
+        if (res.ok) {
+          document.getElementById('docFormContent').style.display = 'none';
+          document.getElementById('docFormSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Submit Document Request';
+          alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit Document Request';
+        alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+      });
+    });
+  </script>
 
 </body>
 </html>
