@@ -190,37 +190,38 @@
       top:0;
       z-index:10;
       backdrop-filter: blur(10px);
-      background: rgba(255,255,255,0.85);
-      border-bottom:1px solid var(--color-nav-border);
+      background: rgba(247,248,250,0.85);
+      border-bottom:1px solid var(--color-border);
     }
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:14px 24px;
-      gap:20px;
+      padding:14px 0;
+      gap:14px;
       flex-wrap:wrap;
-    }
-    @media (max-width: 700px){
-      .nav{padding:10px 16px}
     }
     .brand{
       display:flex;
       align-items:center;
-      flex-shrink:0;
+      gap:10px;
+      min-width:240px;
     }
-    .brand img{
-      height:44px;
-      width:auto;
-      display:block;
-      border-radius:8px;
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, var(--color-amber), var(--color-black));
+      box-shadow: 0 8px 20px rgba(245,166,35,0.25);
     }
-    @media (max-width: 700px){
-      .brand img{height:36px}
+    .brand h1{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:16px;
+      margin:0;
+      letter-spacing:0.3px;
     }
+    .brand small{display:block; color:var(--color-text-secondary); margin-top:2px}
     .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
     .navlinks a{color:var(--color-text-secondary); font-weight:600; font-size:14px}
-    .navlinks a:hover{color:var(--color-nav-text-hover)}
+    .navlinks a:hover{color:var(--color-text-primary)}
     .cta{
       display:flex; gap:10px; align-items:center; flex-wrap:wrap;
     }
@@ -800,9 +801,10 @@
   <header>
     <div class="container">
       <nav class="nav">
-        <a href="/" class="brand" aria-label="Space City Cruise Collective — Home">
-          <img src="/images/logo-horizontal.png" alt="Space City Cruise Collective" />
-        </a>
+        <div class="brand">
+          <div class="logo"></div>
+          <div><h1>Space City Cruise Collective</h1><small>Pilot Car &amp; Escort Services</small></div>
+        </div>
         <div class="navlinks">
           <a href="#services">Services</a>
           <a href="#why-us">Why Us</a>
