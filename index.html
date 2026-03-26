@@ -208,9 +208,15 @@
       min-width:240px;
     }
     .logo{
-      width:40px; height:40px; border-radius:12px;
-      background: linear-gradient(135deg, var(--color-amber), var(--color-black));
+      width:40px; height:40px; border-radius:10px;
       box-shadow: 0 8px 20px rgba(245,166,35,0.25);
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    @media(max-width:768px){
+      .logo{
+        width:34px; height:34px; border-radius:8px;
+      }
     }
     .brand h1{
       font-family: Montserrat, Inter, sans-serif;
@@ -802,7 +808,7 @@
     <div class="container">
       <nav class="nav">
         <div class="brand">
-          <div class="logo"></div>
+          <img class="logo" src="/images/logo-icon.png" alt="Space City Cruise Collective shield logo" />
           <div><h1>Space City Cruise Collective</h1><small>Pilot Car &amp; Escort Services</small></div>
         </div>
         <div class="navlinks">
