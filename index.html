@@ -3,24 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space City Cruise Collective | Texas Contract Routes & Courier Services</title>
-  <meta name="description" content="Texas statewide (24/7) contract routes, medical courier & specimen transport, on-demand rush courier, and pilot/escort vehicle support. SOP-driven operations built for reliability and scale." />
+  <title>Space City Cruise Collective | Texas Pilot Car & Escort Services</title>
+  <meta name="description" content="Professional lead and chase pilot car services for oversize and overweight loads across Texas. Certified, insured, and permit-aware escort operations with 24/7 dispatch availability." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <style>
     /* ====== FONT + THEME ====== */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
 
     :root{
-      --navy:#0B1F3B;
-      --teal:#0E7C86;
-      --amber:#F59E0B;
-      --bg:#F7F8FA;
-      --card:#FFFFFF;
-      --text:#0F172A;
-      --muted:#475569;
-      --border:rgba(15,23,42,0.10);
-      --shadow: 0 10px 30px rgba(2, 6, 23, 0.10);
-      --radius:18px;
+      /* =========================
+         SPACE CITY CRUISE COLLECTIVE
+         Brand System — Black + Amber + White
+         ========================= */
+
+      /* Core brand */
+      --color-black: #000000;
+      --color-charcoal: #111111;
+      --color-surface-dark: #1A1A1A;
+      --color-amber: #F5A623;
+      --color-amber-hover: #D98C1A;
+      --color-amber-soft: #FFF4E5;
+      --color-white: #FFFFFF;
+
+      /* Text */
+      --color-text-primary: #111827;
+      --color-text-secondary: #6B7280;
+      --color-text-inverse: #FFFFFF;
+      --color-text-muted-dark: #9CA3AF;
+
+      /* Backgrounds */
+      --color-bg-page: #FFFFFF;
+      --color-bg-alt: #F5F7FA;
+      --color-bg-dark: #000000;
+      --color-bg-dark-soft: #111111;
+      --color-bg-dark-elevated: #1A1A1A;
+
+      /* Borders / lines */
+      --color-border: #E5E7EB;
+      --color-border-dark: #2A2A2A;
+      --color-divider: #E5E7EB;
+
+      /* Links */
+      --color-link: #111827;
+      --color-link-hover: #000000;
+      --color-link-inverse: #FFFFFF;
+      --color-link-inverse-hover: #F5A623;
+
+      /* Buttons */
+      --color-btn-primary-bg: #F5A623;
+      --color-btn-primary-text: #000000;
+      --color-btn-primary-hover: #D98C1A;
+
+      --color-btn-secondary-bg: transparent;
+      --color-btn-secondary-text: #000000;
+      --color-btn-secondary-border: #000000;
+      --color-btn-secondary-hover-bg: #000000;
+      --color-btn-secondary-hover-text: #FFFFFF;
+
+      /* Dark buttons */
+      --color-btn-dark-bg: #000000;
+      --color-btn-dark-text: #FFFFFF;
+      --color-btn-dark-hover: #111111;
+
+      /* Cards */
+      --color-card-bg: #FFFFFF;
+      --color-card-border: #E5E7EB;
+      --color-card-title: #111827;
+      --color-card-text: #6B7280;
+
+      --color-card-dark-bg: #1A1A1A;
+      --color-card-dark-border: #2A2A2A;
+      --color-card-dark-title: #FFFFFF;
+      --color-card-dark-text: #9CA3AF;
+
+      /* Hero right panel / stats */
+      --color-hero-panel-bg: #000000;
+      --color-hero-panel-inner: #111111;
+      --color-stat-bg: #1A1A1A;
+      --color-stat-border: #2A2A2A;
+      --color-stat-number: #FFFFFF;
+      --color-stat-number-accent: #F5A623;
+      --color-stat-label: #9CA3AF;
+
+      /* Tags / badges */
+      --color-tag-bg: #F5F7FA;
+      --color-tag-text: #111827;
+      --color-tag-border: #E5E7EB;
+
+      --color-tag-highlight-bg: #FFF4E5;
+      --color-tag-highlight-text: #B45309;
+      --color-tag-highlight-border: #F5A623;
+
+      /* Icon chips */
+      --color-icon-chip-bg: #F5F7FA;
+      --color-icon-chip-accent-bg: #FFF4E5;
+      --color-icon-primary: #111827;
+      --color-icon-accent: #F5A623;
+
+      /* Header / nav */
+      --color-nav-bg: #FFFFFF;
+      --color-nav-text: #111827;
+      --color-nav-text-hover: #000000;
+      --color-nav-border: #E5E7EB;
+
+      /* Footer / final CTA */
+      --color-footer-bg: #000000;
+      --color-footer-heading: #FFFFFF;
+      --color-footer-text: #9CA3AF;
+      --color-footer-link: #FFFFFF;
+      --color-footer-link-hover: #F5A623;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.12);
+      --shadow-dark-md: 0 8px 20px rgba(0, 0, 0, 0.28);
+
+      /* Radius */
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --radius-xl: 22px;
+
+      /* Transitions */
+      --transition-fast: 160ms ease;
+      --transition-base: 220ms ease;
+
+      /* Legacy aliases for layout */
       --max: 1160px;
     }
 
@@ -28,8 +146,8 @@
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:var(--bg);
+      color:var(--color-text-primary);
+      background:var(--color-bg-alt);
       line-height:1.45;
     }
     a{color:inherit; text-decoration:none}
@@ -39,8 +157,8 @@
 
     /* ====== TOP BAR ====== */
     .topbar{
-      background: linear-gradient(90deg, var(--navy), #07152A);
-      color:#fff;
+      background: linear-gradient(90deg, var(--color-black), var(--color-charcoal));
+      color:var(--color-text-inverse);
       font-size:14px;
       padding:10px 0;
     }
@@ -76,7 +194,7 @@
       z-index:10;
       backdrop-filter: blur(10px);
       background: rgba(247,248,250,0.85);
-      border-bottom:1px solid var(--border);
+      border-bottom:1px solid var(--color-border);
     }
     .nav{
       display:flex;
@@ -93,9 +211,14 @@
       min-width:240px;
     }
     .logo{
-      width:40px; height:40px; border-radius:12px;
-      background: linear-gradient(135deg, var(--teal), var(--navy));
-      box-shadow: 0 8px 20px rgba(14,124,134,0.25);
+      width:44px; height:44px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    @media(max-width:768px){
+      .logo{
+        width:38px; height:38px;
+      }
     }
     .brand h1{
       font-family: Montserrat, Inter, sans-serif;
@@ -103,10 +226,10 @@
       margin:0;
       letter-spacing:0.3px;
     }
-    .brand small{display:block; color:var(--muted); margin-top:2px}
+    .brand small{display:block; color:var(--color-text-secondary); margin-top:2px}
     .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
-    .navlinks a{color:var(--muted); font-weight:600; font-size:14px}
-    .navlinks a:hover{color:var(--text)}
+    .navlinks a{color:var(--color-text-secondary); font-weight:600; font-size:14px}
+    .navlinks a:hover{color:var(--color-text-primary)}
     .cta{
       display:flex; gap:10px; align-items:center; flex-wrap:wrap;
     }
@@ -118,23 +241,31 @@
       justify-content:center;
       gap:10px;
       padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:#fff;
+      border-radius:var(--radius-md);
+      border:1px solid var(--color-border);
+      background:var(--color-white);
       font-weight:700;
       font-size:14px;
       cursor:pointer;
-      transition:transform 0.05s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition:transform var(--transition-fast), box-shadow var(--transition-base), background var(--transition-base);
     }
-    .btn:hover{box-shadow: var(--shadow); transform: translateY(-1px)}
+    .btn:hover{box-shadow: var(--shadow-md); transform: translateY(-1px)}
     .btn-primary{
-      background: var(--amber);
+      background: var(--color-btn-primary-bg);
       border-color: rgba(0,0,0,0.08);
-      color:#1A1200;
+      color: var(--color-btn-primary-text);
+    }
+    .btn-primary:hover{
+      background: var(--color-btn-primary-hover);
     }
     .btn-secondary{
-      background: #fff;
-      color: var(--text);
+      background: var(--color-btn-secondary-bg);
+      color: var(--color-btn-secondary-text);
+      border-color: var(--color-btn-secondary-border);
+    }
+    .btn-secondary:hover{
+      background: var(--color-btn-secondary-hover-bg);
+      color: var(--color-btn-secondary-hover-text);
     }
 
     /* ====== HERO ====== */
@@ -151,10 +282,10 @@
       .hero-wrap{grid-template-columns:1fr}
     }
     .hero-card{
-      background: linear-gradient(180deg, #ffffff, #ffffff);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background: var(--color-card-bg);
+      border:1px solid var(--color-card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
       padding:28px;
       position:relative;
       overflow:hidden;
@@ -165,7 +296,7 @@
       inset:-120px -200px auto auto;
       width:360px; height:360px;
       border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, rgba(14,124,134,0.18), rgba(11,31,59,0.0) 70%);
+      background: radial-gradient(circle at 30% 30%, rgba(245,166,35,0.12), rgba(0,0,0,0.0) 70%);
       transform: rotate(10deg);
     }
     .kicker{
@@ -174,9 +305,9 @@
       align-items:center;
       padding:8px 12px;
       border-radius:999px;
-      background: rgba(14,124,134,0.10);
-      border:1px solid rgba(14,124,134,0.18);
-      color: var(--navy);
+      background: var(--color-amber-soft);
+      border:1px solid var(--color-amber);
+      color: var(--color-text-primary);
       font-weight:800;
       font-size:13px;
       position:relative;
@@ -194,7 +325,7 @@
       .hero h2{font-size:32px}
     }
     .hero p{
-      color: var(--muted);
+      color: var(--color-text-secondary);
       font-size:16px;
       margin:0 0 18px;
       position:relative;
@@ -212,22 +343,22 @@
       .trust{grid-template-columns:1fr}
     }
     .trust div{
-      background: rgba(2,6,23,0.03);
-      border:1px solid var(--border);
-      border-radius:14px;
+      background: rgba(17,24,39,0.03);
+      border:1px solid var(--color-border);
+      border-radius:var(--radius-md);
       padding:10px 12px;
       font-weight:700;
-      color: var(--navy);
+      color: var(--color-text-primary);
       font-size:13px;
     }
 
     .hero-media{
-      background: linear-gradient(180deg, var(--navy), #07152A);
-      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--color-hero-panel-bg), var(--color-charcoal));
+      border-radius: var(--radius-lg);
       padding:18px;
-      border:1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow);
-      color:#fff;
+      border:1px solid var(--color-border-dark);
+      box-shadow: var(--shadow-dark-md);
+      color:var(--color-text-inverse);
       position:relative;
       overflow:hidden;
     }
@@ -237,11 +368,1045 @@
       inset:auto -120px -120px auto;
       width:320px; height:320px;
       border-radius:50%;
-      background: radial-gradient(circle at 40% 40%, rgba(245,158,11,0.22), rgba(245,158,11,0.0) 70%);
+      background: radial-gradient(circle at 40% 40%, rgba(245,166,35,0.22), rgba(245,166,35,0.0) 70%);
     }
     .media-box{
-      border:1px dashed rgba(255,255,255,0.25);
+      border:1px solid rgba(255,255,255,0.12);
       border-radius:16px;
-      padding:18px;
+      padding:0;
       min-height:220px;
-      display
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      align-items:center;
+      text-align:center;
+      position:relative;
+      z-index:1;
+      overflow:hidden;
+    }
+    .media-box img.hero-photo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      position:absolute;
+      inset:0;
+    }
+    .media-box .hero-photo-overlay{
+      position:relative;
+      z-index:2;
+      padding:18px;
+      width:100%;
+      background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    }
+    .media-box h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:20px;
+      margin:0 0 8px;
+    }
+    .media-box p{
+      color:var(--color-text-muted-dark);
+      font-size:14px;
+      margin:0 0 14px;
+    }
+
+    /* ====== PHOTO GALLERY STRIP ====== */
+    .photo-gallery{
+      padding:0 0 12px;
+    }
+    .gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:16px;
+    }
+    .gallery-item{
+      position:relative;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      aspect-ratio:4/3;
+      box-shadow:var(--shadow-md);
+    }
+    .gallery-item:nth-child(3){
+      aspect-ratio:3/4;
+      grid-row:span 2;
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.4s ease;
+    }
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+    .gallery-item .gallery-label{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      padding:10px 14px;
+      background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.3px;
+    }
+    @media(max-width:900px){
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .gallery-item:nth-child(3){
+        aspect-ratio:4/3;
+        grid-row:auto;
+      }
+    }
+    @media(max-width:500px){
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+    }
+    .stat-row{
+      display:flex;
+      gap:14px;
+      margin-top:14px;
+      position:relative;
+      z-index:1;
+    }
+    .stat{
+      flex:1;
+      background:var(--color-stat-bg);
+      border:1px solid var(--color-stat-border);
+      border-radius:var(--radius-md);
+      padding:12px;
+      text-align:center;
+    }
+    .stat strong{
+      display:block;
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:22px;
+      color:var(--color-stat-number-accent);
+    }
+    .stat span{
+      font-size:12px;
+      color:var(--color-stat-label);
+    }
+    .hero-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top:18px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-logo img{
+      max-width:420px;
+      width:100%;
+      height:auto;
+      opacity:0.92;
+      filter:drop-shadow(0 2px 8px rgba(245,166,35,0.18));
+    }
+    @media (max-width: 900px){
+      .hero-logo img{max-width:320px}
+    }
+
+    /* ====== SECTION ====== */
+    .section{
+      padding:48px 0;
+    }
+    .section-header{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    .section-header h2{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:32px;
+      margin:0 0 8px;
+    }
+    .section-header p{
+      color:var(--color-text-secondary);
+      font-size:16px;
+      margin:0;
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    /* ====== SERVICE CARDS ====== */
+    .services-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+    }
+    .service-card{
+      background:var(--color-card-bg);
+      border:1px solid var(--color-card-border);
+      border-radius:var(--radius-lg);
+      padding:24px;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover{
+      transform:translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-icon{
+      width:48px; height:48px;
+      border-radius:var(--radius-md);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      margin-bottom:14px;
+    }
+    .service-card h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:17px;
+      margin:0 0 8px;
+    }
+    .service-card p{
+      color:var(--color-card-text);
+      font-size:14px;
+      margin:0 0 12px;
+      line-height:1.5;
+    }
+    .service-tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      background:var(--color-amber-soft);
+      color:var(--color-tag-highlight-text);
+    }
+
+    /* ====== WHY US ====== */
+    .why-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+    }
+    .why-card{
+      background:var(--color-card-bg);
+      border:1px solid var(--color-card-border);
+      border-radius:var(--radius-lg);
+      padding:22px;
+      text-align:center;
+    }
+    .why-card .icon{
+      width:52px; height:52px;
+      border-radius:var(--radius-md);
+      margin:0 auto 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      background:var(--color-icon-chip-accent-bg);
+    }
+    .why-card h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:16px;
+      margin:0 0 6px;
+    }
+    .why-card p{
+      color:var(--color-card-text);
+      font-size:13px;
+      margin:0;
+      line-height:1.5;
+    }
+
+    /* ====== COVERAGE BANNER ====== */
+    .coverage{
+      background: linear-gradient(135deg, rgba(0,0,0,0.88), rgba(17,17,17,0.92)), url('/images/gallery-side.jpg') center/cover no-repeat;
+      border-radius:var(--radius-lg);
+      padding:36px 32px;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+      box-shadow: var(--shadow-dark-md);
+    }
+    .coverage h2{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:26px;
+      margin:0 0 6px;
+    }
+    .coverage p{
+      color:var(--color-text-muted-dark);
+      margin:0;
+      font-size:15px;
+      max-width:540px;
+    }
+    .coverage .btn-primary{
+      flex-shrink:0;
+    }
+
+    /* ====== CONTACT ====== */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    @media (max-width: 700px){
+      .contact-grid{grid-template-columns:1fr}
+    }
+    .contact-info{
+      background:var(--color-card-bg);
+      border:1px solid var(--color-card-border);
+      border-radius:var(--radius-lg);
+      padding:28px;
+      box-shadow:var(--shadow-md);
+    }
+    .contact-info h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:20px;
+      margin:0 0 16px;
+    }
+    .contact-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:16px;
+    }
+    .contact-item .ci-icon{
+      width:40px; height:40px;
+      border-radius:12px;
+      background:var(--color-icon-chip-accent-bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      flex-shrink:0;
+    }
+    .contact-item strong{
+      display:block;
+      font-size:14px;
+      margin-bottom:2px;
+    }
+    .contact-item span{
+      color:var(--color-text-secondary);
+      font-size:13px;
+    }
+    .contact-form{
+      background:var(--color-card-bg);
+      border:1px solid var(--color-card-border);
+      border-radius:var(--radius-lg);
+      padding:28px;
+      box-shadow:var(--shadow-md);
+    }
+    .contact-form h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:20px;
+      margin:0 0 16px;
+    }
+    .form-group{
+      margin-bottom:14px;
+    }
+    .form-group label{
+      display:block;
+      font-weight:600;
+      font-size:13px;
+      margin-bottom:5px;
+      color:var(--color-text-primary);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;
+      padding:10px 14px;
+      border:1px solid var(--color-border);
+      border-radius:12px;
+      font-family:inherit;
+      font-size:14px;
+      background:var(--color-bg-alt);
+      color:var(--color-text-primary);
+      outline:none;
+      transition:border-color var(--transition-base);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:var(--color-amber);
+    }
+    .form-group textarea{
+      resize:vertical;
+      min-height:80px;
+    }
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 500px){
+      .form-row{grid-template-columns:1fr}
+    }
+
+    /* ====== FOOTER ====== */
+    footer{
+      background: linear-gradient(180deg, var(--color-footer-bg), var(--color-charcoal));
+      color:var(--color-text-inverse);
+      padding:36px 0 20px;
+      margin-top:48px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap:32px;
+      margin-bottom:28px;
+    }
+    @media (max-width: 700px){
+      .footer-grid{grid-template-columns:1fr}
+    }
+    .footer-logo-row{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .footer-logo{
+      height:38px;
+      width:auto;
+      display:block;
+    }
+    .footer-brand h3{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:18px;
+      margin:0;
+    }
+    .footer-brand p{
+      color:var(--color-footer-text);
+      font-size:13px;
+      margin:0 0 14px;
+      line-height:1.6;
+    }
+    .footer-col h4{
+      font-family: Montserrat, Inter, sans-serif;
+      font-size:14px;
+      margin:0 0 12px;
+      color:var(--color-amber);
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .footer-col a{
+      display:block;
+      color:var(--color-footer-text);
+      font-size:13px;
+      margin-bottom:8px;
+      transition:color var(--transition-fast);
+    }
+    .footer-col a:hover{color:var(--color-footer-link-hover)}
+    .footer-bottom{
+      border-top:1px solid var(--color-border-dark);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+      color:var(--color-footer-text);
+      font-size:12px;
+    }
+
+    /* ====== MODAL ====== */
+    .modal-overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:100;
+      background:rgba(0,0,0,0.55);
+      backdrop-filter:blur(4px);
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .modal-overlay.active{display:flex}
+    .modal{
+      background:var(--color-card-bg);
+      border:1px solid var(--color-card-border);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-lg);
+      padding:28px;
+      max-width:520px;
+      width:100%;
+      max-height:90vh;
+      overflow-y:auto;
+      position:relative;
+    }
+    .modal h3{
+      font-family:Montserrat,Inter,sans-serif;
+      font-size:20px;
+      margin:0 0 6px;
+    }
+    .modal .modal-sub{
+      color:var(--color-text-secondary);
+      font-size:14px;
+      margin:0 0 18px;
+    }
+    .modal-close{
+      position:absolute;
+      top:16px;
+      right:16px;
+      width:32px;height:32px;
+      border-radius:var(--radius-sm);
+      border:1px solid var(--color-border);
+      background:var(--color-bg-alt);
+      font-size:18px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--color-text-secondary);
+      transition:background var(--transition-fast);
+    }
+    .modal-close:hover{background:var(--color-border)}
+    .modal-success{
+      text-align:center;
+      padding:24px 0;
+    }
+    .modal-success .check-icon{
+      width:56px;height:56px;
+      border-radius:50%;
+      background:var(--color-amber-soft);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin:0 auto 16px;
+    }
+    .modal-success h3{margin-bottom:8px}
+    .modal-success p{
+      color:var(--color-text-secondary);
+      font-size:14px;
+      margin:0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== TOP BAR ====== -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="chip">&#9742; Houston, TX &mdash; Statewide Operations 24/7</div>
+      <div class="top-actions">
+        <a href="tel:+18329560054">&#9742; (832) 956-0054</a>
+        <a href="mailto:dispatch@spacecitycruisecollective.com">&#9993; dispatch@spacecitycruisecollective.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <img class="logo" src="/images/logo-icon.png" alt="Space City Cruise Collective shield logo" />
+          <div><h1>Space City Cruise Collective</h1><small>Pilot Car &amp; Escort Services</small></div>
+        </div>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#coverage">Coverage</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="cta">
+          <a href="#contact" class="btn btn-primary">Request Escort Coverage</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-wrap">
+        <div class="hero-card">
+          <div class="kicker">&#9733; WITPAC Certified &bull; Washington PEVO Certified &bull; $1M+ Insured &bull; Permit-Aware Operations</div>
+          <h2>Pilot Car &amp; Escort Services &mdash; Built for Permit-Compliant Loads</h2>
+          <p style="font-size:15px;font-weight:600;color:var(--color-text-primary);margin:0 0 6px;">Lead &amp; Chase Escort Support for Oversize and Overweight Loads</p>
+          <p>Texas Statewide &bull; Regional Routes &bull; 24/7 Dispatch</p>
+          <p>Space City Cruise Collective provides professional pilot car and escort services aligned with state permit requirements, routing restrictions, and real-world job conditions.</p>
+          <p>We support carriers, brokers, and dispatchers who need reliable escort coverage without delays, confusion, or compliance issues.</p>
+          <div class="row">
+            <a href="#contact" class="btn btn-primary">Request Escort Coverage</a>
+            <a href="#" class="btn btn-secondary" onclick="openAvailModal(event)">Check Availability</a>
+          </div>
+          <div class="trust">
+            <div>&#10003; WITPAC Certified</div>
+            <div>&#10003; Washington PEVO Certified</div>
+            <div>&#10003; $1M+ Insured</div>
+            <div>&#10003; Permit-Aware Operations</div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="media-box">
+            <img class="hero-photo" src="/images/hero-vehicle.jpg" alt="Space City Cruise Collective pilot car — Jeep Wrangler with OVERSIZE LOAD sign in front of Houston mural" loading="eager" />
+            <div class="hero-photo-overlay">
+              <h3>Texas &amp; Regional Escort Coverage</h3>
+              <p>Houston-based &bull; Statewide Texas coverage &bull; Multi-state capable</p>
+              <a href="#" class="btn btn-primary" onclick="openAvailModal(event)">Check Availability</a>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat">
+              <strong>&lt; 15 Min</strong>
+              <span>Avg Response Time</span>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <span>Dispatch Availability</span>
+            </div>
+            <div class="stat">
+              <strong>$1M+</strong>
+              <span>Commercial Insurance</span>
+            </div>
+          </div>
+          <div class="hero-logo">
+            <img src="/images/logo-horizontal.png" alt="Space City Cruise Collective logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Escort Services Built for Real Loads</h2>
+        <p>Operational support designed for oversize transport, permit compliance, and efficient execution.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(99,102,241,0.10)">&#128679;</div>
+          <h3>Pilot &amp; Escort Vehicle Support</h3>
+          <p>Lead and chase escort services for oversize and overweight loads. Certified, compliant, and built for real-world transport conditions.</p>
+          <span class="service-tag">Lead</span> <span class="service-tag">Chase</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(14,124,134,0.10)">&#128507;</div>
+          <h3>Route Survey &amp; Height Clearance</h3>
+          <p>Identify low-clearance risks, bridge restrictions, and routing issues before dispatch. Reduce problems before the load moves.</p>
+          <span class="service-tag">Route Survey</span> <span class="service-tag">Clearance Checks</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(245,158,11,0.10)">&#128221;</div>
+          <h3>Permit-Aware Escort Coordination</h3>
+          <p>Escort operations aligned with state permit requirements, travel windows, and routing restrictions. No missed details.</p>
+          <span class="service-tag">Permit Compliant</span> <span class="service-tag">Route Aligned</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon" style="background:rgba(239,68,68,0.10)">&#128739;</div>
+          <h3>Multi-State &amp; Long-Haul Support</h3>
+          <p>Available for Texas statewide moves and regional routes. Built for carriers running extended or cross-state loads.</p>
+          <span class="service-tag">Regional Coverage</span> <span class="service-tag">Long-Haul Ready</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PHOTO GALLERY ====== -->
+  <section class="section photo-gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Fleet in Action</h2>
+        <p>Professional escort vehicles equipped and ready for oversize load operations across Texas.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/images/gallery-front.jpg" alt="Pilot car front view with OVERSIZE LOAD sign and Houston mural" loading="lazy" />
+          <div class="gallery-label">Escort-Ready Equipment</div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/hero-vehicle.jpg" alt="Pilot car side view in front of Greetings From Houston mural" loading="lazy" />
+          <div class="gallery-label">Houston-Based Operations</div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/gallery-portrait.jpg" alt="Front view of pilot car with oversize load signage" loading="lazy" />
+          <div class="gallery-label">Compliant Signage</div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/gallery-side.jpg" alt="Pilot car three-quarter view showcasing roof rack and oversize load sign" loading="lazy" />
+          <div class="gallery-label">Texas Statewide Coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHY US ====== -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <h2>Built for Oversize Load Escort &mdash; Not Guesswork</h2>
+        <p>We operate with a compliance-first approach designed for carriers and dispatchers who cannot afford mistakes.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="icon">&#128203;</div>
+          <h3>Permit-Compliant Execution</h3>
+          <p>Every escort is aligned with permit requirements, routing restrictions, and state regulations.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">&#128225;</div>
+          <h3>Escort-Ready Equipment</h3>
+          <p>High-visibility setup, compliant signage, and escort-ready vehicle configuration for oversize loads.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">&#128274;</div>
+          <h3>Insured. Documented. Ready.</h3>
+          <p>$1M+ commercial insurance with COI available upon request. Clean onboarding for carriers and brokers.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon">&#128337;</div>
+          <h3>Dispatcher-Level Communication</h3>
+          <p>Fast response, direct contact, and real-time coordination from dispatch to delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COVERAGE BANNER ====== -->
+  <section class="section" id="coverage">
+    <div class="container">
+      <div class="coverage">
+        <div>
+          <h2>Statewide Escort Coverage &mdash; Ready When Your Load Is</h2>
+          <p>Based in Houston with active coverage across Dallas&ndash;Fort Worth, Austin, San Antonio, El Paso, and major freight corridors. Available for regional and multi-state routes as required.</p>
+        </div>
+        <a href="#" class="btn btn-primary" onclick="openAvailModal(event)">Check Escort Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ready to Dispatch Your Escort?</h2>
+        <p>Certified &bull; Insured &bull; Permit-Aware &bull; Ready When You Are</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="ci-icon">&#9742;</div>
+            <div>
+              <strong>Phone</strong>
+              <span>(832) 956-0054</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">&#9993;</div>
+            <div>
+              <strong>Email</strong>
+              <span>dispatch@spacecitycruisecollective.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">&#128205;</div>
+            <div>
+              <strong>Headquarters</strong>
+              <span>Houston, TX</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">&#128337;</div>
+            <div>
+              <strong>Dispatch Hours</strong>
+              <span>24/7 &mdash; 365 Days</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Request a Quote</h3>
+          <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+            <input type="hidden" name="form-name" value="quote" />
+            <input type="hidden" name="subject" value="New Quote Request from %{formName} - Space City Cruise Collective" />
+            <p style="display:none">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service...</option>
+                <option value="pilot-escort">Pilot &amp; Escort Vehicle Support</option>
+                <option value="route-survey">Route Survey &amp; Height Clearance</option>
+                <option value="permit-escort">Permit-Aware Escort Coordination</option>
+                <option value="multi-state">Multi-State &amp; Long-Haul Escort Support</option>
+                <option value="other">Other / Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Details</label>
+              <textarea id="message" name="message" placeholder="Tell us about your route needs, frequency, locations, and any special requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%">Request Escort Coverage</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <img src="/images/logo-icon.png" alt="" class="footer-logo" />
+            <h3>Space City Cruise Collective</h3>
+          </div>
+          <p>Professional pilot car and escort services aligned with state permit requirements, routing restrictions, and real-world job conditions. Certified, insured, and built for carriers who need reliable escort coverage.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Pilot &amp; Escort</a>
+          <a href="#services">Route Survey</a>
+          <a href="#services">Permit Coordination</a>
+          <a href="#services">Long-Haul Escort</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#why-us">Why Us</a>
+          <a href="#coverage">Coverage Area</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact">Get a Quote</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Space City Cruise Collective. All rights reserved.</span>
+        <span>Houston, TX &mdash; Statewide Operations</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== DOCUMENT REQUEST MODAL ====== -->
+  <div class="modal-overlay" id="docModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeDocModal()" aria-label="Close">&times;</button>
+      <div id="docFormContent">
+        <h3>Request Documents</h3>
+        <p class="modal-sub">Request onboarding documents such as COI, WITPAC certification, or other company documentation.</p>
+        <form id="docForm" name="documents" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="documents" />
+          <p style="display:none">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doc-name">Full Name</label>
+              <input type="text" id="doc-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="doc-company">Company</label>
+              <input type="text" id="doc-company" name="company" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="doc-email">Email</label>
+              <input type="email" id="doc-email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="doc-phone">Phone</label>
+              <input type="tel" id="doc-phone" name="phone" placeholder="(555) 555-5555" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="doc-documents">Documents Needed</label>
+            <select id="doc-documents" name="documents" required>
+              <option value="">Select document type...</option>
+              <option value="coi">Certificate of Insurance (COI)</option>
+              <option value="witpac">WITPAC Certification</option>
+              <option value="wa-pevo">Washington State PEVO Certification</option>
+              <option value="multiple">Multiple Documents</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="doc-message">Additional Details</label>
+            <textarea id="doc-message" name="message" placeholder="Certificate holder details, specific documents needed, load or project reference..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Submit Document Request</button>
+        </form>
+      </div>
+      <div id="docFormSuccess" class="modal-success" style="display:none">
+        <div class="check-icon">&#10003;</div>
+        <h3>Document Request Received</h3>
+        <p>Thank you. Dispatch will review your request and send the appropriate documents as quickly as possible.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== AVAILABILITY CHECK MODAL ====== -->
+  <div class="modal-overlay" id="availModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeAvailModal()" aria-label="Close">&times;</button>
+      <div id="availFormContent">
+        <h3>Check Escort Availability</h3>
+        <p class="modal-sub">Submit your load details and we'll confirm escort availability and scheduling.</p>
+        <form id="availForm" name="availability" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="availability" />
+          <p style="display:none">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="avail-name">Full Name</label>
+              <input type="text" id="avail-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="avail-company">Company</label>
+              <input type="text" id="avail-company" name="company" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="avail-email">Email</label>
+              <input type="email" id="avail-email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="avail-phone">Phone</label>
+              <input type="tel" id="avail-phone" name="phone" placeholder="(555) 555-5555" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="avail-date">Requested Date</label>
+              <input type="date" id="avail-date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="avail-service">Service Type</label>
+              <select id="avail-service" name="service" required>
+                <option value="">Select service type...</option>
+                <option value="lead-escort">Lead Escort</option>
+                <option value="chase-escort">Chase Escort</option>
+                <option value="lead-chase">Lead &amp; Chase</option>
+                <option value="route-survey">Route Survey</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="avail-details">Load &amp; Route Details</label>
+            <textarea id="avail-details" name="details" placeholder="Load dimensions, origin, destination, permit info, special requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Check Availability</button>
+        </form>
+      </div>
+      <div id="availFormSuccess" class="modal-success" style="display:none">
+        <div class="check-icon">&#10003;</div>
+        <h3>Availability Request Received</h3>
+        <p>Thank you. Dispatch will review your request and confirm escort availability as quickly as possible.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openDocModal(e) {
+      e.preventDefault();
+      document.getElementById('docModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDocModal() {
+      document.getElementById('docModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('docModal').addEventListener('click', function(e) {
+      if (e.target === this) closeDocModal();
+    });
+
+    document.getElementById('docForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(res) {
+        if (res.ok) {
+          document.getElementById('docFormContent').style.display = 'none';
+          document.getElementById('docFormSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Submit Document Request';
+          alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Submit Document Request';
+        alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+      });
+    });
+
+    /* ---- Availability Modal ---- */
+    function openAvailModal(e) {
+      e.preventDefault();
+      document.getElementById('availModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAvailModal() {
+      document.getElementById('availModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('availModal').addEventListener('click', function(e) {
+      if (e.target === this) closeAvailModal();
+    });
+
+    document.getElementById('availForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(res) {
+        if (res.ok) {
+          document.getElementById('availFormContent').style.display = 'none';
+          document.getElementById('availFormSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Check Availability';
+          alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Check Availability';
+        alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+      });
+    });
+  </script>
+
+</body>
+</html>
