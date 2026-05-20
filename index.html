@@ -856,7 +856,7 @@
           <p>We support carriers, brokers, and dispatchers who need reliable escort coverage without delays, confusion, or compliance issues.</p>
           <div class="row">
             <a href="#contact" class="btn btn-primary">Request Escort Coverage</a>
-            <a href="#services" class="btn btn-secondary">Check Availability</a>
+            <a href="#" class="btn btn-secondary" onclick="openAvailModal(event)">Check Availability</a>
           </div>
           <div class="trust">
             <div>&#10003; WITPAC Certified</div>
@@ -869,7 +869,7 @@
           <div class="media-box">
             <h3>Texas &amp; Regional Escort Coverage</h3>
             <p>Houston-based &bull; Statewide Texas coverage &bull; Multi-state capable</p>
-            <a href="#contact" class="btn btn-primary">Check Availability</a>
+            <a href="#" class="btn btn-primary" onclick="openAvailModal(event)">Check Availability</a>
           </div>
           <div class="stat-row">
             <div class="stat">
@@ -971,7 +971,7 @@
           <h2>Statewide Escort Coverage &mdash; Ready When Your Load Is</h2>
           <p>Based in Houston with active coverage across Dallas&ndash;Fort Worth, Austin, San Antonio, El Paso, and major freight corridors. Available for regional and multi-state routes as required.</p>
         </div>
-        <a href="#contact" class="btn btn-primary">Check Escort Availability</a>
+        <a href="#" class="btn btn-primary" onclick="openAvailModal(event)">Check Escort Availability</a>
       </div>
     </div>
   </section>
@@ -1156,6 +1156,70 @@
     </div>
   </div>
 
+  <!-- ====== AVAILABILITY CHECK MODAL ====== -->
+  <div class="modal-overlay" id="availModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeAvailModal()" aria-label="Close">&times;</button>
+      <div id="availFormContent">
+        <h3>Check Escort Availability</h3>
+        <p class="modal-sub">Submit your load details and we'll confirm escort availability and scheduling.</p>
+        <form id="availForm" name="availability" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="availability" />
+          <p style="display:none">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="avail-name">Full Name</label>
+              <input type="text" id="avail-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="avail-company">Company</label>
+              <input type="text" id="avail-company" name="company" placeholder="Company name" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="avail-email">Email</label>
+              <input type="email" id="avail-email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="avail-phone">Phone</label>
+              <input type="tel" id="avail-phone" name="phone" placeholder="(555) 555-5555" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="avail-date">Requested Date</label>
+              <input type="date" id="avail-date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="avail-service">Service Type</label>
+              <select id="avail-service" name="service" required>
+                <option value="">Select service type...</option>
+                <option value="lead-escort">Lead Escort</option>
+                <option value="chase-escort">Chase Escort</option>
+                <option value="lead-chase">Lead &amp; Chase</option>
+                <option value="route-survey">Route Survey</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="avail-details">Load &amp; Route Details</label>
+            <textarea id="avail-details" name="details" placeholder="Load dimensions, origin, destination, permit info, special requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Check Availability</button>
+        </form>
+      </div>
+      <div id="availFormSuccess" class="modal-success" style="display:none">
+        <div class="check-icon">&#10003;</div>
+        <h3>Availability Request Received</h3>
+        <p>Thank you. Dispatch will review your request and confirm escort availability as quickly as possible.</p>
+      </div>
+    </div>
+  </div>
+
   <script>
     function openDocModal(e) {
       e.preventDefault();
@@ -1194,6 +1258,48 @@
       }).catch(function() {
         btn.disabled = false;
         btn.textContent = 'Submit Document Request';
+        alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+      });
+    });
+
+    /* ---- Availability Modal ---- */
+    function openAvailModal(e) {
+      e.preventDefault();
+      document.getElementById('availModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAvailModal() {
+      document.getElementById('availModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('availModal').addEventListener('click', function(e) {
+      if (e.target === this) closeAvailModal();
+    });
+
+    document.getElementById('availForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = e.target;
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(res) {
+        if (res.ok) {
+          document.getElementById('availFormContent').style.display = 'none';
+          document.getElementById('availFormSuccess').style.display = 'block';
+          form.reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Check Availability';
+          alert('There was an error submitting the form. Please try again or contact dispatch directly.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Check Availability';
         alert('There was an error submitting the form. Please try again or contact dispatch directly.');
       });
     });
