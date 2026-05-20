@@ -371,17 +371,32 @@
       background: radial-gradient(circle at 40% 40%, rgba(245,166,35,0.22), rgba(245,166,35,0.0) 70%);
     }
     .media-box{
-      border:1px dashed rgba(255,255,255,0.20);
+      border:1px solid rgba(255,255,255,0.12);
       border-radius:16px;
-      padding:18px;
+      padding:0;
       min-height:220px;
       display:flex;
       flex-direction:column;
-      justify-content:center;
+      justify-content:flex-end;
       align-items:center;
       text-align:center;
       position:relative;
       z-index:1;
+      overflow:hidden;
+    }
+    .media-box img.hero-photo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      position:absolute;
+      inset:0;
+    }
+    .media-box .hero-photo-overlay{
+      position:relative;
+      z-index:2;
+      padding:18px;
+      width:100%;
+      background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
     }
     .media-box h3{
       font-family: Montserrat, Inter, sans-serif;
@@ -392,6 +407,63 @@
       color:var(--color-text-muted-dark);
       font-size:14px;
       margin:0 0 14px;
+    }
+
+    /* ====== PHOTO GALLERY STRIP ====== */
+    .photo-gallery{
+      padding:0 0 12px;
+    }
+    .gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:16px;
+    }
+    .gallery-item{
+      position:relative;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      aspect-ratio:4/3;
+      box-shadow:var(--shadow-md);
+    }
+    .gallery-item:nth-child(3){
+      aspect-ratio:3/4;
+      grid-row:span 2;
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.4s ease;
+    }
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+    .gallery-item .gallery-label{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      padding:10px 14px;
+      background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0.3px;
+    }
+    @media(max-width:900px){
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .gallery-item:nth-child(3){
+        aspect-ratio:4/3;
+        grid-row:auto;
+      }
+    }
+    @media(max-width:500px){
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
     }
     .stat-row{
       display:flex;
@@ -543,7 +615,7 @@
 
     /* ====== COVERAGE BANNER ====== */
     .coverage{
-      background: linear-gradient(135deg, var(--color-black), var(--color-charcoal));
+      background: linear-gradient(135deg, rgba(0,0,0,0.88), rgba(17,17,17,0.92)), url('/images/gallery-side.jpg') center/cover no-repeat;
       border-radius:var(--radius-lg);
       padding:36px 32px;
       color:#fff;
@@ -867,9 +939,12 @@
         </div>
         <div class="hero-media">
           <div class="media-box">
-            <h3>Texas &amp; Regional Escort Coverage</h3>
-            <p>Houston-based &bull; Statewide Texas coverage &bull; Multi-state capable</p>
-            <a href="#" class="btn btn-primary" onclick="openAvailModal(event)">Check Availability</a>
+            <img class="hero-photo" src="/images/hero-vehicle.jpg" alt="Space City Cruise Collective pilot car — Jeep Wrangler with OVERSIZE LOAD sign in front of Houston mural" loading="eager" />
+            <div class="hero-photo-overlay">
+              <h3>Texas &amp; Regional Escort Coverage</h3>
+              <p>Houston-based &bull; Statewide Texas coverage &bull; Multi-state capable</p>
+              <a href="#" class="btn btn-primary" onclick="openAvailModal(event)">Check Availability</a>
+            </div>
           </div>
           <div class="stat-row">
             <div class="stat">
@@ -926,6 +1001,34 @@
           <h3>Multi-State &amp; Long-Haul Support</h3>
           <p>Available for Texas statewide moves and regional routes. Built for carriers running extended or cross-state loads.</p>
           <span class="service-tag">Regional Coverage</span> <span class="service-tag">Long-Haul Ready</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PHOTO GALLERY ====== -->
+  <section class="section photo-gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Fleet in Action</h2>
+        <p>Professional escort vehicles equipped and ready for oversize load operations across Texas.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/images/gallery-front.jpg" alt="Pilot car front view with OVERSIZE LOAD sign and Houston mural" loading="lazy" />
+          <div class="gallery-label">Escort-Ready Equipment</div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/hero-vehicle.jpg" alt="Pilot car side view in front of Greetings From Houston mural" loading="lazy" />
+          <div class="gallery-label">Houston-Based Operations</div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/gallery-portrait.jpg" alt="Front view of pilot car with oversize load signage" loading="lazy" />
+          <div class="gallery-label">Compliant Signage</div>
+        </div>
+        <div class="gallery-item">
+          <img src="/images/gallery-side.jpg" alt="Pilot car three-quarter view showcasing roof rack and oversize load sign" loading="lazy" />
+          <div class="gallery-label">Texas Statewide Coverage</div>
         </div>
       </div>
     </div>
